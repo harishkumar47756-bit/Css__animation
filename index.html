@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #0b0b18;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+        }
+
+        .loader {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            margin: auto;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .loader span {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 4px solid transparent;
+            border-top-color: #00eaff;
+            border-right-color: #ff00c8;
+            border-radius: 50%;
+            animation: rotate 1.5s linear infinite;
+        }
+
+        .loader span:nth-child(2) {
+            width: 110px;
+            height: 110px;
+            top: 20px;
+            left: 20px;
+            border-top-color: #ffe600;
+            border-right-color: #00ff88;
+            animation-duration: 1s;
+            animation-direction: reverse;
+        }
+
+        .loader span:nth-child(3) {
+            width: 70px;
+            height: 70px;
+            top: 40px;
+            left: 40px;
+            border-top-color: #ffffff;
+            border-right-color: #00eaff;
+            animation-duration: 0.7s;
+        }
+
+        .dot {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: white;
+            border-radius: 50%;
+            top: 68px;
+            left: 68px;
+            box-shadow: 0 0 20px #00eaff;
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        h1 {
+            color: white;
+            margin-top: 40px;
+            font-size: 40px;
+            letter-spacing: 5px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        p {
+            color: #aaa;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(0.7);
+                opacity: 0.6;
+            }
+
+            50% {
+                transform: scale(1.3);
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #00eaff;
+            }
+
+            to {
+                text-shadow:
+                    0 0 10px #00eaff,
+                    0 0 20px #ff00c8,
+                    0 0 40px #00eaff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="dot"></div>
+        </div>
+
+        <h1>CSS ANIMATION</h1>
+        <p>Pure HTML & CSS • No JavaScript</p>
+
+    </div>
+
+</body>
+</html>
